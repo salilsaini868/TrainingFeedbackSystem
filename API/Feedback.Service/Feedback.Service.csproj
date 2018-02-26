@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Feedback.Common\Feedback.Common.csproj" />
+    <ProjectReference Include="..\Feedback.Data\Feedback.Data.csproj" />
+    <ProjectReference Include="..\Feedback.Entity\Feedback.Entity.csproj" />
+    <ProjectReference Include="..\Feedback.Model\Feedback.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>
