@@ -52,7 +52,7 @@ namespace Feedback.Web
                 options.AddPolicy(DefaultCorsPolicyName, p =>
                 {
                     //todo: Get from confiuration
-                    p.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod();
+                    p.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
                 });
             });
 

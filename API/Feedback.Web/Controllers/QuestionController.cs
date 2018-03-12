@@ -13,7 +13,7 @@ using Feedback.Common.Enums;
 namespace Feedback.Web.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Qualificaton/[Action]")]
+    [Route("api/Question/[Action]")]
    // [ValidateModel]
    // [Authorize]
     public class QuestionController : Controller

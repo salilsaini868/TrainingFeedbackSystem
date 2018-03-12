@@ -7,6 +7,6 @@ namespace Feedback.Data.Interfaces
 {
     public interface IFeedbackRepository : IRepository<FeedBack>
     {
-
+        FeedBack GetFeedBackAssignedQuestions(int feedbackId);
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Feedback.ViewModel.Question;
 
 namespace Feedback.ViewModel.FeedBack
 {
@@ -22,5 +23,9 @@ namespace Feedback.ViewModel.FeedBack
         public int FeedbackId { get; set; }
 
         public int QuestionId { get; set; }
+
+        public QuestionViewModel Question { get; set; }
     }
+
+   
 }

@@ -135,7 +135,7 @@ label{
     border: 1px solid #e6e6e6;
     outline: none;
     color: #D8D5D5;
-    margin-bottom: 20px;
+    margin: -10px 0 20px 0;
 	outline:none;
 	resize:none;
     height: 50px;
@@ -171,44 +171,6 @@ label{
 
 
 
-.rating { 
-	border: none;
-	float: left;
-  }
-  
-  .rating > input { display: none; } 
-  .rating > label:before { 
-	margin:0 3px 0 0;
-	font-size: 1.25em;
-	font-family: FontAwesome;
-	display: inline-block;
-	content: "\f005";
-  }
-  
-  .rating > .half:before { 
-	content: "\f089";
-	position: absolute;
-  }
-  
-  .rating > label { 
-	color: #ddd; 
-   float: right; 
-	 cursor: pointer;
-	 z-index: 99999;
-	 position: relative;
-
-  }
-  
-  
-  .rating > input:checked ~ label,
-  .rating:not(:checked) > label:hover, 
-  .rating:not(:checked) > label:hover ~ label { color: #ff9800;  } 
-  
-  .rating > input:checked + label:hover, 
-  .rating > input:checked ~ label:hover,
-  .rating > label:hover ~ input:checked ~ label, 
-  .rating > input:checked ~ label:hover ~ label { color: #ff9800;  } 
-
 ul.smily-nav{ padding:0; margin: 0 0 16px 0; float: left; width:100%; }
 ul.smily-nav li{ display: inline-block; list-style: none; margin-right:5px; text-align: left;}
 ul.smily-nav li a label{ margin:10px 0 0 12px; font-size: 16px;}
@@ -218,6 +180,85 @@ ol.radio-list{ display: block; margin:2px 0 -30px 1px;}
 ol.radio-list li{ display: inline-block !important; list-style: none; margin-right: 3px;}
 .stars{ float:left; width:100%;}
 
+
+.star-rating {
+  font-size: 0;
+  white-space: nowrap;
+  display: inline-block;
+  /* width: 250px; remove this */
+  height: 32px;
+  overflow: hidden;
+  position: relative;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjREREREREIiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-rating i {
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  /* width: 20%; remove this */
+  z-index: 1;
+  background: url('data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iMjBweCIgaGVpZ2h0PSIyMHB4IiB2aWV3Qm94PSIwIDAgMjAgMjAiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDIwIDIwIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBmaWxsPSIjRkZERjg4IiBwb2ludHM9IjEwLDAgMTMuMDksNi41ODMgMjAsNy42MzkgMTUsMTIuNzY0IDE2LjE4LDIwIDEwLDE2LjU4MyAzLjgyLDIwIDUsMTIuNzY0IDAsNy42MzkgNi45MSw2LjU4MyAiLz48L3N2Zz4=');
+  background-size: contain;
+}
+.star-rating input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  opacity: 0;
+  display: inline-block;
+  /* width: 20%; remove this */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: 2;
+	position: relative;
+	cursor: pointer;
+}
+.star-rating input:hover + i,
+.star-rating input:checked + i {
+  opacity: 1;
+}
+.star-rating i ~ i {
+  width: 40%;
+}
+.star-rating i ~ i ~ i {
+  width: 60%;
+}
+.star-rating i ~ i ~ i ~ i {
+  width: 80%;
+}
+.star-rating i ~ i ~ i ~ i ~ i {
+  width: 100%;
+}
+::after,
+::before {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.star-rating.star-5 {width: 160px; margin: -10px 0 0 10px;}
+.star-rating.star-5 input,
+.star-rating.star-5 i {width: 20%;}
+.star-rating.star-5 i ~ i {width: 40%;}
+.star-rating.star-5 i ~ i ~ i {width: 60%;}
+.star-rating.star-5 i ~ i ~ i ~ i {width: 80%;}
+.star-rating.star-5 i ~ i ~ i ~ i ~i {width: 100%;}
+
+.star-rating.star-3 {width: 150px;}
+.star-rating.star-3 input,
+.star-rating.star-3 i {width: 33.33%;}
+.star-rating.star-3 i ~ i {width: 66.66%;}
+.star-rating.star-3 i ~ i ~ i {width: 100%;}
+
+
+
+
 @media (max-width:1070px){
 	.main{width:80%;}
 }
@@ -226,8 +267,9 @@ ol.radio-list li{ display: inline-block !important; list-style: none; margin-rig
   @media (max-width:767px){
 	.three-col{ width:100%;}
 	.main{width:90%;}
-	.full-width ul{width:100%;}
+	.full-width ul, .form-main .half-width{width:100%;}
 	.form-main{ padding:20px;}
+	.main textarea{ margin:10px 0 0 0;}
 
   }
 
@@ -239,3 +281,6 @@ ol.radio-list li{ display: inline-block !important; list-style: none; margin-rig
 	ul.smily-nav li{ margin-right: 1px;}
   }
 
+.error{
+	border: 1px solid red !important;
+}

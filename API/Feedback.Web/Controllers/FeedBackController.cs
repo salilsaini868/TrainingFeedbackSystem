@@ -11,9 +11,9 @@ using Microsoft.AspNetCore.Authorization;
 namespace Feedback.Web.Controllers
 {
     [Produces("application/json")]
-    [Route("api/Role/[Action]")]
-    [ValidateModel]
-    [Authorize]
+    [Route("api/FeedBack/[Action]")]
+   // [ValidateModel]
+   // [Authorize]
     public class FeedBackController : Controller
     {
         private readonly IFeedBackManagerService _feedBackManager;
@@ -21,7 +21,13 @@ namespace Feedback.Web.Controllers
         public FeedBackController(IFeedBackManagerService feedBackManager)
         {
             _feedBackManager = feedBackManager;
+        }
 
+        [HttpGet]
+        public IResult GetFeedBackAssignedQuestions(int feedbackId)
+        {
+            var data = _feedBackManager.GetFeedBackAssignedQuestions(feedbackId);
+            return data;
         }
     }
 }

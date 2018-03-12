@@ -1,22 +1,73 @@
 import * as React from 'react';
+import { FeedbackQuestionModel } from 'api/model/feedback.model';
+import { QuestionData } from 'common/question.component';
 
-class Rating extends React.Component {
+export interface RatingProp {
+  data: FeedbackQuestionModel;
+  // tslint:disable-next-line:no-any
+  onChildRadioClick: any;
+  showErrorMessages: boolean;
+}
+
+class Rating extends React.Component<RatingProp> {
+
+  handleClick = (event: any) => {
+    let value: QuestionData = {
+      feedbackQuestionId: this.props.data.feedbackQuestionId,
+      rating: +event.target.value
+    };
+    this.props.onChildRadioClick(value);
+  }
+
+  validateRating = () => {
+    let data = this.props.data;
+    const isError: boolean = Object.keys(data).
+      some(x => {
+        const fieldValue = data[x];
+        if (fieldValue.comment === undefined) {
+          return true;
+        }
+        return false;
+      });
+    return !isError;
+  }
+
   render() {
+    var assignedRating = this.props.data.rating || 0;
     return (
-      <fieldset className="rating">
-        <ol className="radio-list">
-          <li><input type="radio" name="gender" /></li>
-          <li><input type="radio" name="gender" /></li>
-          <li><input type="radio" name="gender" /></li>
-          <li><input type="radio" name="gender" /></li>
-          <li><input type="radio" name="gender" /></li>
-        </ol>
-        <label className="full" htmlFor="star5" title="Awesome - 5 stars" />
-        <label className="full" htmlFor="star4" title="Pretty good - 4 stars" />
-        <label className="full" htmlFor="star3" title="Meh - 3 stars" />
-        <label className="full" htmlFor="star2" title="Kinda bad - 2 stars" />
-        <label className="full" htmlFor="star1" title="Sucks big time - 1 star" />
-      </fieldset>
+      // tslint:disable-next-line:max-line-length
+      <span className={((assignedRating === 0) && this.props.showErrorMessages) === true ? 'star-rating star-5 error' : 'star-rating star-5'}>
+        <input
+          type="radio"
+          name={'rat_' + this.props.data.feedbackQuestionId}
+          checked={(assignedRating === 1)}
+          defaultValue="1"
+          onClick={this.handleClick} /><i />
+        <input
+          type="radio"
+          name={'rat_' + this.props.data.feedbackQuestionId}
+          checked={(assignedRating === 2)}
+          defaultValue="2"
+          onClick={this.handleClick} /><i />
+        <input
+          type="radio"
+          name={'rat_' + this.props.data.feedbackQuestionId}
+          checked={(assignedRating === 3)}
+          defaultValue="3"
+          onClick={this.handleClick} /><i />
+        <input
+          type="radio"
+          name={'rat_' + this.props.data.feedbackQuestionId}
+          checked={(assignedRating === 4)}
+          defaultValue="4"
+          onClick={this.handleClick} /><i />
+        <input
+          type="radio"
+          name={'rat_' + this.props.data.feedbackQuestionId}
+          checked={(assignedRating === 5)}
+          defaultValue="5"
+          onClick={this.handleClick} /><i />
+      </span>
     );
   }
 }
