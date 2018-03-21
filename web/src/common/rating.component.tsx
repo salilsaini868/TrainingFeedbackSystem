@@ -11,6 +11,7 @@ export interface RatingProp {
 
 class Rating extends React.Component<RatingProp> {
 
+  // tslint:disable-next-line:no-any
   handleClick = (event: any) => {
     let value: QuestionData = {
       feedbackQuestionId: this.props.data.feedbackQuestionId,
@@ -42,31 +43,37 @@ class Rating extends React.Component<RatingProp> {
           name={'rat_' + this.props.data.feedbackQuestionId}
           checked={(assignedRating === 1)}
           defaultValue="1"
-          onClick={this.handleClick} /><i />
+          onClick={this.handleClick}
+        /><i />
         <input
           type="radio"
           name={'rat_' + this.props.data.feedbackQuestionId}
           checked={(assignedRating === 2)}
           defaultValue="2"
-          onClick={this.handleClick} /><i />
+          onClick={this.handleClick}
+        /><i />
         <input
           type="radio"
           name={'rat_' + this.props.data.feedbackQuestionId}
           checked={(assignedRating === 3)}
           defaultValue="3"
-          onClick={this.handleClick} /><i />
+          onClick={this.handleClick}
+        /><i />
         <input
           type="radio"
           name={'rat_' + this.props.data.feedbackQuestionId}
           checked={(assignedRating === 4)}
           defaultValue="4"
-          onClick={this.handleClick} /><i />
+          onClick={this.handleClick}
+        /><i />
         <input
           type="radio"
           name={'rat_' + this.props.data.feedbackQuestionId}
           checked={(assignedRating === 5)}
           defaultValue="5"
-          onClick={this.handleClick} /><i />
+          onClick={this.handleClick}
+        />
+        <i />
       </span>
     );
   }

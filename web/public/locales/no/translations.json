@@ -1,0 +1,20 @@
+{
+  "common": {
+    "appTile": "Trening tilbakemelding",
+    "save": "Lagre",
+    "close": "Lukk",
+    "lang": "English",
+    "langCode":"en",
+    "switchLang" :"Bytte Til :"
+  },
+  "feedback": {
+    "name": "Ansattes Navn",
+    "id": "Ansatt ID",
+    "dept": "Medarbeideravdeling",
+    "trainerName": "Trenernavn",
+    "topic": "Trening Emner"
+  },
+  "question": {
+    "comment": "Skriv inn kommentarer"
+  }
+}

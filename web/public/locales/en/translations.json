@@ -1,0 +1,20 @@
+{
+  "common": {
+    "appTile": "Training Feedback",
+    "save": "Save",
+    "close": "Close",
+    "lang": "Norsk",
+    "langCode":"no",
+    "switchLang" :"Switch to :"
+  },
+  "feedback": {
+    "name": "Employee Name",
+    "id": "Employee ID",
+    "dept": "Employee Department",
+    "trainerName": "Trainer Name",
+    "topic": "Training Topic"
+  },
+  "question": {
+    "comment": "Enter Comments"
+  }
+}

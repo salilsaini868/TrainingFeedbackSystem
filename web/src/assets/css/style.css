@@ -144,7 +144,7 @@ label{
 }
 
 .btn{
-	background: #ff7700;
+	  background: #ff7700;
     color: #FFFFFF;
     text-align: center;
     padding: 14px 20px;
@@ -155,8 +155,8 @@ label{
     width: auto;
     cursor: pointer;
     margin-bottom: 30px;
-	text-transform:capitalize;
-	margin-left: 18px;
+	  text-transform:capitalize;
+   	margin-left: 18px;
 }
 
 .btn:hover{
@@ -257,8 +257,20 @@ ol.radio-list li{ display: inline-block !important; list-style: none; margin-rig
 .star-rating.star-3 i ~ i ~ i {width: 100%;}
 
 
+.change-lang{
+  width: 100%;
+  float: left;
+  margin-bottom: 10px;
+  text-align:right;
+}
 
-
+.change-lang p, .change-lang a{ display: inline-block; color:#fff;}
+.change-lang a{ margin-left: 10px;     background: #00478c;
+  border-bottom: 4px solid #6aaae8; padding: 10px 15px; color:#fff;}
+  .change-lang a:hover{
+    background: #6aaae8;
+  border-bottom: 4px solid #00478c; 
+  }
 @media (max-width:1070px){
 	.main{width:80%;}
 }

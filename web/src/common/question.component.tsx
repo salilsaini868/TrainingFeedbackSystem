@@ -5,13 +5,19 @@ import Rating from 'common/rating.component';
 
 // models
 import { FeedbackQuestionModel } from 'api/model/feedback.model';
+// import { translate } from 'react-i18next';
 
 export interface QuestionProps {
   data: FeedbackQuestionModel[];
   // tslint:disable-next-line:no-any
   onChildTextBlur: any;
+  // tslint:disable-next-line:no-any
   onRatingChange: any;
   showErrorMessages: boolean;
+  // tslint:disable-next-line:no-any
+  t: any;
+  // tslint:disable-next-line:no-any
+  i18n: any;
 }
 
 // for sending data to parent
@@ -22,6 +28,7 @@ export interface QuestionData {
 }
 
 class QuestionComponent extends React.Component<QuestionProps> {
+  // tslint:disable-next-line:no-any
   child: any;
   constructor(props: QuestionProps) {
     super(props);
@@ -83,12 +90,13 @@ class QuestionComponent extends React.Component<QuestionProps> {
               ref={instance => { me.child = instance; }}
               data={item}
               onChildRadioClick={me.handleRating}
-              showErrorMessages={me.props.showErrorMessages} />
+              showErrorMessages={me.props.showErrorMessages}
+            />
           </div>
           <div className="three-col">
             <div className="full-width">
               <textarea
-                placeholder="Enter Comments"
+                placeholder={me.props.t('question.comment')}
                 // tslint:disable-next-line:max-line-length
                 className={((item.comment === undefined || item.comment === '') && me.props.showErrorMessages) === true ? 'error' : ''}
                 name="comments"

@@ -10,6 +10,7 @@ import { FeedBackModel, FeedbackQuestionModel } from 'api/model/feedback.model';
 
 // Service
 import { FeedbackService } from 'api/services/feedback.service';
+import { translate } from 'react-i18next';
 
 export interface TrainingFeedbackState {
   training: TrainingFeedback;
@@ -18,7 +19,7 @@ export interface TrainingFeedbackState {
 }
 
 // tslint:disable-next-line:no-any
-class FeedbackForm extends Component<any, TrainingFeedbackState> {
+class FeedbackForm extends Component<{ t: any, i18n: any }, TrainingFeedbackState> {
   // tslint:disable-next-line:no-any
   child: any;
   // variables
@@ -106,7 +107,7 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
     return (
       <form onSubmit={this.handleSubmit}>
         <div className="full-width half-width">
-          <label>Employee Name</label>
+          <label>{this.props.t('feedback.name')}</label>
           <input
             type="text"
             value={pageData.TraineeName}
@@ -114,7 +115,7 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
           />
         </div>
         <div className="full-width half-width right-gap">
-          <label>Employee ID</label>
+          <label>{this.props.t('feedback.id')}</label>
           <input
             type="text"
             value={pageData.TraineeEmpId}
@@ -122,7 +123,7 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
           />
         </div>
         <div className="full-width half-width">
-          <label>Employee Department</label>
+          <label>{this.props.t('feedback.dept')}</label>
           <input
             type="text"
             value={pageData.TraineeDept}
@@ -130,7 +131,7 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
           />
         </div>
         <div className="full-width half-width right-gap">
-          <label>Trainer Name</label>
+          <label>{this.props.t('feedback.trainerName')}</label>
           <input
             type="text"
             value={pageData.TrainerName}
@@ -138,7 +139,7 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
           />
         </div>
         <div className="full-width">
-          <label>Training Topic</label>
+          <label>{this.props.t('feedback.topic')}</label>
           <input
             type="text"
             value={pageData.TrainingTopic}
@@ -152,15 +153,17 @@ class FeedbackForm extends Component<any, TrainingFeedbackState> {
             onChildTextBlur={this.onChildTextChanged}
             showErrorMessages={this.state.showValidationMessage}
             onRatingChange={this.onRatingChange}
+            t={this.props.t}
+            i18n={this.props.i18n}
           />
         }
         <span className="pull-right">
-          <button type="submit" value="Save" className="btn">Save</button>
-          <button type="submit" value="Save" className="btn">Close</button>
+          <button type="submit" value="Save" className="btn">{this.props.t('common.save')}</button>
+          <button type="submit" value="Save" className="btn">{this.props.t('common.close')}</button>
         </span>
       </form>
     );
   }
 }
 
-export default FeedbackForm;
+export default translate('translations')(FeedbackForm);
