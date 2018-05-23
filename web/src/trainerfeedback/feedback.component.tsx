@@ -108,50 +108,50 @@ class FeedbackForm extends Component<{ t: any, i18n: any }, TrainingFeedbackStat
   render() {
     let pageData = this.state.training;
     return (
-      <form onSubmit={this.handleSubmit} noValidate autoComplete="off">
+      <form onSubmit={this.handleSubmit} noValidate={false} autoComplete="off">
         <div className="full-width half-width">
           <TextField
-            required
-            error={((pageData.TraineeName === '') && this.state.showValidationMessage)}
+            required={true}
+            // error={((pageData.TraineeName === '') && this.state.showValidationMessage)}
             id={this.props.t('feedback.name')}
-            label={this.props.t('feedback.name')}
+            floatingLabelText={this.props.t('feedback.name')}
             defaultValue={pageData.TraineeName}
           />
         </div>
         <div className="full-width half-width right-gap">
           <TextField
-            required
+            required={true}
             id={this.props.t('feedback.id')}
-            label={this.props.t('feedback.id')}
+            floatingLabelText={this.props.t('feedback.id')}
             defaultValue={pageData.TraineeEmpId}
-            error={((pageData.TraineeEmpId === '') && this.state.showValidationMessage)}
+          // error={((pageData.TraineeEmpId === '') && this.state.showValidationMessage)}
           />
         </div>
         <div className="full-width half-width">
           <TextField
-            required
+            required={true}
             id={this.props.t('feedback.dept')}
-            label={this.props.t('feedback.dept')}
+            floatingLabelText={this.props.t('feedback.dept')}
             defaultValue={pageData.TraineeDept}
-            error={((pageData.TraineeDept === '') && this.state.showValidationMessage)}
+          // error={((pageData.TraineeDept === '') && this.state.showValidationMessage)}
           />
         </div>
         <div className="full-width half-width right-gap">
           <TextField
-            required
+            required={true}
             id={this.props.t('feedback.trainerName')}
-            label={this.props.t('feedback.trainerName')}
+            floatingLabelText={this.props.t('feedback.trainerName')}
             defaultValue={pageData.TrainerName}
-            error={((pageData.TrainerName === '') && this.state.showValidationMessage)}
+          // error={((pageData.TrainerName === '') && this.state.showValidationMessage)}
           />
         </div>
         <div className="full-width bottom-gap">
           <TextField
-            required
+            required={true}
             id={this.props.t('feedback.topic')}
-            label={this.props.t('feedback.topic')}
+            floatingLabelText={this.props.t('feedback.topic')}
             defaultValue={pageData.TrainingTopic}
-            error={((pageData.TrainingTopic === '') && this.state.showValidationMessage)}
+          // error={((pageData.TrainingTopic === '') && this.state.showValidationMessage)}
           />
         </div>
         {this.state.feedbackQuestions.length > 0 &&

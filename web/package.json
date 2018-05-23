@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",    
     "i18next": "10.3.0",
     "i18next-browser-languagedetector": "2.1.0",
     "i18next-xhr-backend": "1.5.0",
-    "material-ui": "^1.0.0-beta.38",
+    "material-ui": "^1.0.0-beta.47",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-drag-and-drop": "^2.4.0",
@@ -14,6 +16,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-scripts-ts": "2.13.0",
+    "react-select": "^1.2.1",
     "rxjs": "^5.5.6"
   },
   "scripts": {
@@ -23,15 +26,18 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/i18next": "^8.4.3",
+    "@types/i18next-browser-languagedetector": "^2.0.1",
+    "@types/i18next-xhr-backend": "^1.4.1",
     "@types/jest": "^22.1.1",
     "@types/node": "^8.9.1",
+    "@types/prop-types": "^15.5.3",
     "@types/react": "^16.0.36",
     "@types/react-dom": "^16.0.3",
-    "@types/react-router-dom": "^4.2.3",
-    "typescript": "^2.7.1",
-    "@types/i18next": "^8.4.3",
-    "@types/i18next-xhr-backend": "^1.4.1",
     "@types/react-i18next": "^7.3.1",
-    "@types/i18next-browser-languagedetector": "^2.0.1"
+    "@types/react-router-dom": "^4.2.3",
+    "@types/material-ui": "^0.20.8",   
+    "@types/react-select": "^1.2.6",
+    "typescript": "^2.7.1"
   }
 }

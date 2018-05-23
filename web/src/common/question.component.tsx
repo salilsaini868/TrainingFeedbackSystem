@@ -97,16 +97,16 @@ class QuestionComponent extends React.Component<QuestionProps> {
           <div className="three-col">
             <div className="full-width comment-right">
               <TextField
-                required
+                required={true}
                 id={'ml_' + item.feedbackQuestionId}
-                label={me.props.t('question.comment')}
-                multiline
-                rowsMax="4"
+                floatingLabelText={me.props.t('question.comment')}
+                multiLine={true}
+                // rowsMax=4
                 defaultValue={item.comment || ''}
                 onBlur={me.handleBlur.bind(me, item)}
-                // tslint:disable-next-line:max-line-length
-                error={((item.comment === undefined || item.comment === '') && me.props.showErrorMessages)}
-                margin="normal"
+              // tslint:disable-next-line:max-line-length
+              // error={((item.comment === undefined || item.comment === '') && me.props.showErrorMessages)}
+              // margin="normal"
               />
             </div>
           </div>
